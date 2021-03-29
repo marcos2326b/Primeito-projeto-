@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Sábado</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="Style.css" rel="stylesheet">
+</head>
+
+<body class="corpo">
+    <div class="container">
+        <div class="titulo" h1>Programação da reunião de sábado</h1>
+        </div>
+        <div class="p-3 mb-2 bg-warning text-dark">Discurso Público</div>
+        <ul class="menu">
+            <li>Cantico e oração inicial</li>
+            <li><select class="form-select" aria-label="Default select example" id="selecttema">
+                    <option selected>Selecione o tema</option>
+                </select> </li>
+        </ul>
+
+        <div class="p-3 mb-2 bg-danger text-white">Estudo de a Sentinela</div>
+
+
+
+        <div class="row">
+            <div class="col-4">
+                <ul class="menu">
+                    <li>
+                        Selecione o Cantico:
+                        <select class="form-select" aria-label="Default select example" id="selectCantico">
+                            <option selected></option>
+                        </select>
+                    </li>
+                    <li>Tema da Sentinela:
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder>
+                    </li>
+                    <li>Cantico e oração final:
+                        <select class="form-select" aria-label="Default select example" id="selectCantico2">
+                            <option selected></option>
+                            <option value="1">1</option>
+                        </select>
+                    </li>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-5">
+                <ul class="listas">
+                    <li>Presidente:
+                        <select class="form-select" aria-label="Default select example" id="selectpresidentes">
+                            <option selected></option>
+                        </select>
+                    </li>
+                    <li>Orador:
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder>
+                    </li>
+                    <li>Congregação:
+                        <select class="form-select" aria-label="Default select example" id="selectcongregação">
+                            <option selected></option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var canticos = Array.from({ length: 150 }, (_, i) => i + 1)
+        var selectCantico = document.getElementById("selectCantico");
+        var selectCantico2 = document.getElementById("selectCantico2");
+        for (cantic of canticos) {
+            // var optionBase =  `<option value='${cantic}'>${cantic}</option>`; // OPTIONAL
+            var optionBase = "<option value='" + cantic + "'>" + cantic + "</option>";
+            selectCantico.innerHTML = selectCantico.innerHTML + optionBase;
+            selectCantico2.innerHTML = selectCantico2.innerHTML + optionBase;
+        }
+
+        var presidentes = ["Antonio Almeida", "Bruno", "Claúdio", "Emerson", "Evandro", "Geraildo", "Gênesis", "José Bonifácio", "Josimar maciel", "Marcos", "Welder", "William"];
+        var selectpresidentes = document.getElementById("selectpresidentes");
+        for (president of presidentes) {
+            var optionBase = `<option value='${president}'>${president}</option>`;
+            selectpresidentes.innerHTML = selectpresidentes.innerHTML + optionBase;
+        }
+        var congregação = ["Ls Guaianases", "Ls Dom Bosco", "Ls Santana", "Ls Suzano", "Ls Mogi das Cruzes", "Ls Itaquaquecetuba", "Ls Sacomã", "Ls Ipiranga", "Ls Atibaia", "Ls Pimentas"];
+        var selectcongregação = document.getElementById("selectcongregação");
+        for (congregation of congregação) {
+            var optionBase = `<option value='${congregation}'>${congregation}</option>`;
+            selectcongregação.innerHTML = selectcongregação.innerHTML + optionBase;
+        }
+
+        var tema = ["Você conhece bem a Deus?", "Você vai sobreviver aos últimos dias?", "Você está avançando com a organização unida de Jeová?", "Que provas temos de que Deus existe?", "Você pode ter uma familia feliz!"];
+        var selecttema = document.getElementById("selecttema");
+        for (tem of tema) {
+            var optionBase = `<option value='${tem}'>${tem}</option>`;
+            selecttema.innerHTML = selecttema.innerHTML + optionBase;
+        }
+        
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+</body>
